@@ -1,0 +1,63 @@
+body {
+  background-color: #CEBCB8;
+}
+
+.App {
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  width: 25%;
+  max-width: 600px;
+  margin: 1em auto;
+  padding-bottom: 2em;
+  border: 0.1px solid black;
+  border-radius: 10px;
+}
+
+.music-cover {
+  border-radius: 10%;
+  width: 200px;
+  height: 200px;
+}
+
+.play-btn {
+  background: none;
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: #18180E;
+}
+
+.subtitle {
+  margin-top: -1em;
+  color: #4f4f4f;
+}
+
+.time {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  color: #828282;
+  font-size: smaller;
+}
+
+.timeline {
+  width: 80%;
+  background-color: #2F426C;
+}
+
+input[type='range'] {
+  background-color: #2F426C;
+}
+
+@media (max-width: 900px) {
+  .container{
+    width: 50%;
+  }
+}
