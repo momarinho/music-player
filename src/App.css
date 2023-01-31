@@ -2,6 +2,10 @@ body {
   background-color: #CEBCB8;
 }
 
+footer {
+  font-size: 7px;
+}
+
 .App {
   text-align: center;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useSound from 'use-sound';
-import Edgerunners from '../assets/Edgerunners.mp3';
-import tavern from '../assets/tavern.jpg'
+import ncs from '../assets/ncs.mp3';
+import tavern from '../assets/tavern.jpg';
 
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
 import { BiSkipNext, BiSkipPrevious } from 'react-icons/bi';
@@ -9,7 +9,7 @@ import { IconContext } from 'react-icons';
 
 export default function Player() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [play, { pause, duration, sound }] = useSound(Edgerunners);
+  const [play, { pause, duration, sound }] = useSound(ncs);
   const [time, setTime] = useState({
     min: '',
     sec: '',
@@ -37,7 +37,7 @@ export default function Player() {
       const secRemain = Math.floor(sec % 60);
       setTime({
         min: min,
-        sec: secRemain
+        sec: secRemain,
       });
     }
   }, [duration, isPlaying]);
@@ -45,7 +45,7 @@ export default function Player() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (sound) {
-        setSeconds(sound.seek([])); 
+        setSeconds(sound.seek([]));
         const min = Math.floor(sound.seek([]) / 60);
         const sec = Math.floor(sound.seek([]) % 60);
         setCurrentTime({
@@ -64,8 +64,8 @@ export default function Player() {
       {/* src="https://picsum.photos/200/200" */}
 
       <div>
-        <h3 className="title">Gaming Music (No Copyright )</h3>
-        <p className="subtitle">Roy Knox and Friends</p>
+        <h3 className="title"> Need You [NCS Release]</h3>
+        <p className="subtitle">Yonexx & lunar</p>
       </div>
 
       <div>
@@ -101,7 +101,9 @@ export default function Player() {
           <p>
             {currentTime.min}:{currentTime.sec}
           </p>
-          <p>{time.min}:{time.sec}</p>
+          <p>
+            {time.min}:{time.sec}
+          </p>
         </div>
         <input
           type="range"
@@ -115,6 +117,12 @@ export default function Player() {
           }}
         />
       </div>
+
+      <footer>
+        Song: Yonexx & lunar - Need You [NCS Release] Music provided by
+        NoCopyrightSounds Free Download/Stream: http://ncs.io/YL_NeedYou Watch:
+        http://youtu.be/
+      </footer>
     </div>
   );
 }
